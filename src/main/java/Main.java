@@ -1,18 +1,25 @@
-import model.Name;
+
+
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Name[] imiona = new Name[3];
+        String[] imiona = new String[3];
 
         for (int i = 0; i < imiona.length; i++) {
-            imiona[i] = new Name();
-            imiona[i].readNameFromCommandLine();
+            imiona[i] = readNameFromCommandLine();
         }
 
-        for (Name imie : imiona) {
+        for (String imie : imiona) {
             System.out.println(imie);
         }
+    }
+
+    private static String readNameFromCommandLine() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Podaj Imie: ");
+        return sc.nextLine();
     }
 
 }
